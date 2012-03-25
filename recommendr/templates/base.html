@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic Page Needs
+	  ================================================== -->
+		<title>Recommendr</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Tumblr blog recommendations">
+		<meta name="author" content="Christopher Yan, Michael Yang, Stephen Zhou">
+		<!--[if lt IE 9]>
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- CSS
+	  ================================================== -->
+		<link rel="stylesheet" href="/media/skeleton.css">
+		<link rel="stylesheet" href="/media/style.css">
+
+	</head>
+	<body>
+
+		<!-- Primary Page Layout
+		================================================== -->
+		<div class="container">
+			<header class="sixteen columns" id="main">
+				<h1>Recommendr</h1>
+				<p>Look for similar <a href="tumblr.com">Tumblr</a> blogs!</p>
+			</header>
+			<div class="eight columns offset-by-four">
+				<form action="/submit_url/" method="post">{% csrf_token %}
+					{{ form.as_p }}
+				</form>
+			</div>
+			<div class="clear"></div>
+			{% if status == "yes" %}
+			<section class="fourteen columns offset-by-one">
+				<article>
+					<header>
+						<h2><a href="{{ info1_url }}">{{info1_title}}</a></h2>
+						<p>from <a href="{{info1_url}}">{{info1_name}}</a></p>
+					</header>
+					<p></p>
+					<div class="figure-section">
+						<figure class="seven columns alpha">
+							<a href="{{first1_post_url}}">
+								{% if first1_type == "photo" %}
+									<img src="{{first1_content}}" width="380px">
+								{% endif %}
+							</a>
+							<figcaption>Note Count: {{first1_note_count}}</figcaption>
+							<figcaption>Source: <a href="{{first1_source_url}}">{{first1_source_title}}</a></figcaption>
+						</figure>
+						
+						<figure class="seven columns omega">
+							<a href="{{last1_post_url}}">
+								{% if last1_type == "photo" %}
+									<img src="{{last1_content}}" width="380px">
+								{% endif %}
+							</a>
+							<figcaption>Note Count: {{last1_note_count}}</figcaption>
+							<figcaption>Source: <a href="{{last1_source_url}}">{{last1_source_title}}</a></figcaption>
+						</figure>
+					</div>			
+				</article>
+				<hr>
+				<article>
+					<header>
+						<h2><a href="{{ info2_url }}">{{info2_title}}</a></h2>
+						<p>from <a href="{{info2_url}}">{{info2_name}}</a></p>
+					</header>
+					<p></p>
+					<div class="figure-section">
+						<figure class="seven columns alpha">
+							<a href="{{first2_post_url}}">
+								{% if first2_type == "photo" %}
+									<img src="{{first2_content}}" width="380px">
+								{% endif %}
+							</a>
+							<figcaption>Note Count: {{first2_note_count}}</figcaption>
+							<figcaption>Source: <a href="{{first2_source_url}}">{{first2_source_title}}</a></figcaption>
+						</figure>
+						
+						<figure class="seven columns omega">
+							<a href="{{last2_post_url}}">
+								{% if last2_type == "photo" %}
+									<img src="{{last2_content}}" width="380px">
+								{% endif %}
+							</a>
+							<figcaption>Note Count: {{last2_note_count}}</figcaption>
+							<figcaption>Source: <a href="{{last2_source_url}}">{{last2_source_title}}</a></figcaption>
+						</figure>
+					</div>			
+				</article>
+				<hr>
+				<article>
+					<header>
+						<h2><a href="{{ info3_url }}">{{info3_title}}</a></h2>
+						<p>from <a href="{{info3_url}}">{{info3_name}}</a></p>
+					</header>
+					<p></p>
+					<div class="figure-section">
+						<figure class="seven columns alpha">
+							<a href="{{first3_post_url}}">
+								{% if first3_type == "photo" %}
+									<img src="{{first3_content}}" width="380px">
+								{% endif %}
+							</a>
+							<figcaption>Note Count: {{first3_note_count}}</figcaption>
+							<figcaption>Source: <a href="{{first3_source_url}}">{{first3_source_title}}</a></figcaption>
+						</figure>
+						
+						<figure class="seven columns omega">
+							<a href="{{last3_post_url}}">
+								{% if last3_type == "photo" %}
+									<img src="{{last3_content}}" width="380px">
+								{% endif %}
+							</a>
+							<figcaption>Note Count: {{last3_note_count}}</figcaption>
+							<figcaption>Source: <a href="{{last3_source_url}}">{{last3_source_title}}</a></figcaption>
+						</figure>
+					</div>			
+				</article>
+			</section>
+			{% endif %}
+			<footer class="sixteen columns">
+				<p>Copyright Nonexistent <br>
+				Christopher Yan, Michael Yang, Stephen Zhou.</p>
+			</footer>
+		</div>
+
+	<!-- End Document
+	================================================== -->
+	</body>
+</html>

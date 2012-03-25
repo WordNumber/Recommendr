@@ -1,0 +1,209 @@
+/* Table of Content
+==================================================
+	#Reset & Basics
+	#Basic Styles
+	#Typography
+	#Links
+	#Lists
+	#Images
+	#Forms
+	#Misc */
+
+/* #Font-Face
+================================================== */
+	@font-face {
+	    font-family: 'Bookman Old Style';
+	    src: url('../fonts/bookos.ttf') format('truetype');
+	    font-weight: bold;
+	    font-style: normal; }
+
+/* #Basic Styles
+================================================== */
+	body {
+		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #181818;
+		-webkit-font-smoothing: antialiased;
+		-webkit-text-size-adjust: 100%;
+		background-color: #DDDDDD;
+	}
+
+
+/* #Typography
+================================================== */
+	h1, h2, h3, h4, h5, h6 {
+		color: #181818;
+		font-family: "Bookman Old Style", "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+		font-weight: normal; }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
+	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
+	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+	h5 { font-size: 17px; line-height: 24px; }
+	h6 { font-size: 14px; line-height: 21px; }
+	.subheader { color: #777; }
+
+	p { margin: 0 0 20px 0; }
+	p img { margin: 0; }
+	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
+
+	em { font-style: italic; }
+	strong { font-weight: bold; color: #333; }
+	small { font-size: 80%; }
+
+	hr { border: solid #bbb; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+
+/* #Links
+================================================== */
+	a, a:visited { color: #5374DD; text-decoration: none; outline: 0; }
+	a:hover, a:focus { color: #000; }
+	p a, p a:visited { line-height: inherit; }
+
+/* #Images
+================================================== */
+
+	img.scale-with-grid {
+		max-width: 100%;
+		height: auto; }
+
+/* #Forms
+================================================== */
+
+	form {
+		margin-bottom: 20px; }
+	fieldset {
+		margin-bottom: 20px; }
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	textarea,
+	select {
+		border: 1px solid #ccc;
+		padding: 6px 4px;
+		outline: none;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #777;
+		margin: 0;
+		width: 940px;
+		max-width: 100%;
+		display: block;
+		margin-bottom: 20px;
+		background: #fff; }
+	select {
+		padding: 0; }
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	textarea:focus {
+		border: 1px solid #aaa;
+ 		color: #444;
+ 		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
+		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+		box-shadow:  0 0 3px rgba(0,0,0,.2); }
+	textarea {
+		min-height: 60px; }
+	label,
+	legend {
+		display: block;
+		font-weight: bold;
+		font-size: 13px;  }
+	select {
+		width: 220px; }
+	input[type="checkbox"] {
+		display: inline; }
+	label span,
+	legend span {
+		font-weight: normal;
+		font-size: 13px;
+		color: #444; }
+
+/* #Header
+================================================== */
+
+	header#main {
+		text-align: center;
+	}
+	
+	header h1 {
+		font-size: 60px;
+	}
+	
+	header h2 a {
+		color: #181818;
+	}
+	
+	header h2 a:visited {
+		color: #181818;
+	}
+	
+	article header p {
+		font-size: 0.9em;
+	}
+
+/* #Section
+================================================== */
+
+	section {
+		margin-top:  20px;
+	}
+
+/* #Footer
+================================================== */	
+	
+	footer {
+		text-align: center;
+		font-size: 0.8em;
+	}
+	
+/* #Figures
+================================================== */
+
+	/*.figure-section {
+		height: 350px;
+		background-color: #FFFFFF;
+		border-radius: 5px;
+	}*/
+
+	figure {
+		border-radius: 5px;
+		margin-bottom: 25px;
+	}
+	
+	figure img {
+		margin: 10px;
+		margin-top: 0;
+		border-radius: 5px;
+	}
+
+	figure figcaption {
+		position: bottom;
+		margin-left: 10px;
+		font-size: 0.8em;
+	}
+
+/* #Articles
+================================================== */
+	/*
+	article {
+		height : 600px;
+		background-color: #ffffff;
+		border-radius: 5px;
+	}*/
+
+	article header {
+		margin-left: 10px;
+	}
+
+	article header h2 {
+		margin-bottom: 0;
+	}
+
+/* #Misc
+================================================== */
+	.remove-bottom { margin-bottom: 0 !important; }
+	.half-bottom { margin-bottom: 10px !important; }
+	.add-bottom { margin-bottom: 20px !important; }
