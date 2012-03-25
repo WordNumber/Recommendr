@@ -7,7 +7,7 @@ num_rec = 3
 
 api_call = 'http://api.tumblr.com/v2/blog/{0}/posts?api_key=FqwjMWpbllZ4IKjNQXXMc8FQ6Mz2VaZnpn4wGX6kBjiOTb11zw&reblog_info=true&notes_info=true&limit=20'
 KEY = 'FqwjMWpbllZ4IKjNQXXMc8FQ6Mz2VaZnpn4wGX6kBjiOTb11zw'
-URL = 'http://api.tumblr.com/v2/blog/%s/%s?api_key=' + KEY
+URL = 'http://api.tumblr.com/v2/blog/%s%s?api_key=' + KEY
 
 
 def recommend(blog_url):
@@ -53,13 +53,13 @@ def recommend(blog_url):
     return recommend
 
 def get_blog_metadata(blog):
-    raw_info = urllib2.urlopen(URL % (blog, 'info'))
+    raw_info = urllib2.urlopen(URL % (blog[7:], 'info'))
     info_html = raw_info.read()
     info_dict = json.loads(info_html)
     return info_dict['response']['blog']
 
 def preview_entries(blog):        
-    raw_posts = urllib2.urlopen(URL % (blog, 'posts'))
+    raw_posts = urllib2.urlopen(URL % (blog[7:], 'posts'))
     posts_html = raw_posts.read()
     posts_dict = json.loads(posts_html)
     
@@ -67,17 +67,28 @@ def preview_entries(blog):
     
     photos = 0
     notphotos = 0
-    limit = 1
+    photo_limit = 2
+    notphoto_limit = 0
     for x in posts_dict['response']['posts']:
-        if photos < limit and x['type'] == 'photo':
+        if photos < photo_limit and x['type'] == 'photo':
             entries.append(x)
             photos += 1
-        if notphotos < limit and x['type'] != 'photo':
+        if notphotos < notphoto_limit and x['type'] != 'photo':
             entries.append(x)
             notphotos += 1
             
     return entries
 
+def get_all_metadata(blog_urls):
+    all_metadata = []
+    
+    for x in blog_urls:
+        li = []
+        li.append(get_blog_metadata(x))
+        li.append(preview_entries(x))
+        all_metadata.append(li)
+        
+    return all_metadata
 
 if __name__ == '__main__':
     recommend(sys.argv[1])
